@@ -44,11 +44,6 @@ namespace TechChallenge.Region.IoC
             services.AddScoped<IRegionService, RegionService>();
         }
 
-        //public static void ConfigureContact(IServiceCollection services)
-        //{
-        //    services.AddScoped<IContactRepository, ContactRepository>();
-        //    services.AddScoped<IContactService, ContactService>();
-        //}
         public static void ConfigureCache(IServiceCollection services, IConfiguration configuration)
         {
             services.AddStackExchangeRedisCache(options => {
