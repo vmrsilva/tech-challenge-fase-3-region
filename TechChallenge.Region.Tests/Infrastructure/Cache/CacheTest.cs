@@ -1,11 +1,6 @@
 ﻿using Microsoft.Extensions.Caching.Distributed;
 using Moq;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechChallenge.Region.Domain.Cache;
 using TechChallenge.Region.Domain.Region.Entity;
 using TechChallenge.Region.Infrastructure.Cache;

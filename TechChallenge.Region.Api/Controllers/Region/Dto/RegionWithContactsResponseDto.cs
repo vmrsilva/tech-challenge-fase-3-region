@@ -5,6 +5,6 @@
         public Guid Id { get; init; }
         public string Name { get; init; }
         public string Ddd { get; init; }
-       // public IEnumerable<ContactResponseDto> Contacts { get; init; }
+        // public IEnumerable<ContactResponseDto> Contacts { get; init; }
     }
 }

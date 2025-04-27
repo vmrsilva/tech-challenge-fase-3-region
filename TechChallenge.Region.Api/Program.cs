@@ -1,12 +1,10 @@
 using FluentValidation.AspNetCore;
 using FluentValidation;
-using Prometheus.SystemMetrics;
 using AutoMapper;
+using Prometheus.SystemMetrics;
+using TechChallenge.Region.IoC;
 using TechChallenge.Region.Api.Mapper;
 using Prometheus;
-using TechChallenge.Region.IoC;
-using TechChallenge.Region.Infrastructure.Context;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,12 +38,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<TechChallangeContext>();
-    dbContext.Database.Migrate();
-}
-
 
 app.UseRouting();
 app.UseHttpMetrics();

@@ -32,7 +32,7 @@ namespace TechChallenge.Region.Infrastructure.Repository.Region
         public async Task<RegionEntity> GetByDddWithContactsAsync(string ddd)
         {
             //return await _baseRepository.GetOneWithIncludeAsync(r => r.Ddd == ddd && !r.IsDeleted, r => r.Contacts).ConfigureAwait(false);
-             throw new Exception();
+            throw new Exception();
         }
 
         public async Task<RegionEntity> GetByIdAsync(Guid id)

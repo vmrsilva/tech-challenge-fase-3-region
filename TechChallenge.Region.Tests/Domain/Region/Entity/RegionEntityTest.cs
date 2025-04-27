@@ -1,10 +1,5 @@
 ﻿using AutoFixture;
 using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechChallenge.Region.Api.Controllers.Region.Dto;
 using TechChallenge.Region.Domain.Region.Entity;
 

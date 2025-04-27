@@ -102,20 +102,6 @@ namespace TechChallenge.Region.Api.Controllers.Region.Http
             });
         }
 
-        [HttpGet("get-ddd-with-contacts/{ddd}")]
-        public async Task<IActionResult> GetByDddWithContacts([FromRoute] string ddd)
-        {
-            var regionEntity = await _regionService.GetByDddWithContacts(ddd).ConfigureAwait(false);
-            var regionDto = _mapper.Map<RegionWithContactsResponseDto>(regionEntity);
-
-            return StatusCode(200, new BaseResponseDto<RegionWithContactsResponseDto>
-            {
-                Success = true,
-                Error = string.Empty,
-                Data = regionDto
-            });
-        }
-
         [HttpGet("get-all")]
         public async Task<IActionResult> GetAllPagedAsync([FromQuery] int pageSize = 10, [FromQuery] int page = 0)
         {

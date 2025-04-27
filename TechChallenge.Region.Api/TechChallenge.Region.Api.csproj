@@ -4,9 +4,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>6934d0fe-90d1-497e-a716-ea3492ad3295</UserSecretsId>
+    <UserSecretsId>ed0e9709-b2db-4c04-af91-ad41df8de0b1</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <DockerfileContext>.</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,7 +25,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TechChallenge.Region.Domain\TechChallenge.Region.Domain.csproj" />
-    
     <ProjectReference Include="..\TechChallenge.Region.Infrastructure\TechChallenge.Region.Infrastructure.csproj" />
     <ProjectReference Include="..\TechChallenge.Region.IoC\TechChallenge.Region.IoC.csproj" />
   </ItemGroup>

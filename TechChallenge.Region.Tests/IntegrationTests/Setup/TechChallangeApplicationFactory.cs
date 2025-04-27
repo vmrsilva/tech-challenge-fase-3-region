@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using System.Runtime.InteropServices;
 using TechChallenge.Region.Domain.Cache;
 using TechChallenge.Region.Domain.Region.Entity;
@@ -124,10 +123,6 @@ namespace TechChallenge.Region.Tests.IntegrationTests.Setup
             var regionTow = new RegionEntity("SC", "47");
 
             context.Region.AddRange(regionOne, regionTow);
-
-            //var contactOne = new ContactEntity("Test", "4141-3338", "test@email.com", regionOne.Id);
-            //var contactTwo = new ContactEntity("Test", "4747-4747", "test@email.com", regionTow.Id);
-            //context.Contact.AddRange(contactOne, contactTwo);
 
             context.SaveChanges();
         }

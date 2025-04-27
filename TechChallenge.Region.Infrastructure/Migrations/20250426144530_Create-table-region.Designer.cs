@@ -12,8 +12,8 @@ using TechChallenge.Region.Infrastructure.Context;
 namespace TechChallenge.Region.Infrastructure.Migrations
 {
     [DbContext(typeof(TechChallangeContext))]
-    [Migration("20250420005857_create-table-region")]
-    partial class createtableregion
+    [Migration("20250426144530_Create-table-region")]
+    partial class Createtableregion
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
