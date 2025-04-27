@@ -9,7 +9,11 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
+#COPY ["TechChallenge.Region.Api.csproj", "TechChallenge.Region.Api/"]
 COPY ["TechChallenge.Region.Api/TechChallenge.Region.Api.csproj", "TechChallenge.Region.Api/"]
+COPY ["TechChallenge.Region.Domain/TechChallenge.Region.Domain.csproj", "TechChallenge.Region.Domain/"]
+COPY ["TechChallenge.Region.Infrastructure/TechChallenge.Region.Infrastructure.csproj", "TechChallenge.Region.Infrastructure/"]
+COPY ["TechChallenge.Region.IoC/TechChallenge.Region.IoC.csproj", "TechChallenge.Region.IoC/"]
 RUN dotnet restore "./TechChallenge.Region.Api/TechChallenge.Region.Api.csproj"
 COPY . .
 WORKDIR "/src/TechChallenge.Region.Api"
