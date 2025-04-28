@@ -23,15 +23,7 @@ Executar o comando:
 ---------------------------------
 
 
-### Executar monitoramento em localhost:<br/>
+### Executar ambiente em localhost:<br/>
 
-A partir do diretório: ../tech-challange-fase-2/TechChallange executar o comando para iniciar os containers:
+Clonar o repositório [docker-compose](https://github.com/vmrsilva/tech-challenge-fase3-dockercompose) com o arquivo docker-compose, configurações do Prometheus e Grafana e orientações para execução.
 
-```bash
-docker-compose up --build -d
-````
-
-Comando parar os containers: <br/>
-```bash
-docker-compose down
-```
