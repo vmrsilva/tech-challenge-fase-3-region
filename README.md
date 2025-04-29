@@ -10,7 +10,7 @@ RM: 360650
 ### Iniciar container Redis:<br/>
 ``docker run -d -p:6379:6379 redis:latest``
 
-Acessar o diretório do projeto TechChallange.Api <br/> 
+Acessar o diretório do projeto TechChallange.Region.Api <br/> 
 Executar o comando:
 ` dotnet run `
 
