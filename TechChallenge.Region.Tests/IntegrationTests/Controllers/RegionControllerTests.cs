@@ -197,8 +197,8 @@ namespace TechChallenge.Region.Tests.IntegrationTests.Controllers
             Assert.NotNull(result?.Data.Name);
         }
 
-        [Fact(DisplayName = "Should Get Region By Ddd Return Data Equal Null When Ddd Does Not Exist")]
-        public async Task ShouldGetRegionByDddReturnDataEqualNullWhenDddDoesNotExist()
+        [Fact(DisplayName = "Should Get Region By Ddd Return Data Equal Bad Request When Ddd Does Not Exist")]
+        public async Task ShouldGetRegionByDddReturnDataEqualBadRequestWhenDddDoesNotExist()
         {
 
             var client = techChallangeApplicationFactory.CreateClient();
@@ -208,8 +208,8 @@ namespace TechChallenge.Region.Tests.IntegrationTests.Controllers
             var result = JsonSerializer.Deserialize<BaseResponseDto<RegionResponseDto>>(responseParsed,
                                                                                         new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-            Assert.True(result?.Success);
+            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+            Assert.False(result?.Success);
             Assert.Null(result?.Data);
         }
 

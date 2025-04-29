@@ -45,7 +45,12 @@ namespace TechChallenge.Region.Domain.Region.Service
 
         public async Task<RegionEntity> GetByDdd(string ddd)
         {
-            return await _regionRepository.GetByDddAsync(ddd).ConfigureAwait(false);
+            var region = await _regionRepository.GetByDddAsync(ddd).ConfigureAwait(false);
+
+            if (region == null)
+                throw new RegionNotFoundException();
+
+            return region;
         }
 
         public async Task<RegionEntity> GetByDddWithContacts(string ddd)
