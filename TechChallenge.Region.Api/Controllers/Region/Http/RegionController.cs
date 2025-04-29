@@ -91,15 +91,36 @@ namespace TechChallenge.Region.Api.Controllers.Region.Http
         [HttpGet("get-by-ddd/{ddd}")]
         public async Task<IActionResult> GetByDdd([FromRoute] string ddd)
         {
-            var regionEntity = await _regionService.GetByDdd(ddd).ConfigureAwait(false);
-            var regionDto = _mapper.Map<RegionResponseDto>(regionEntity);
-
-            return StatusCode(200, new BaseResponseDto<RegionResponseDto>
+            try
             {
-                Success = true,
-                Error = string.Empty,
-                Data = regionDto
-            });
+                var regionEntity = await _regionService.GetByDdd(ddd).ConfigureAwait(false);
+
+                var regionDto = _mapper.Map<RegionResponseDto>(regionEntity);
+
+                return StatusCode(200, new BaseResponseDto<RegionResponseDto>
+                {
+                    Success = true,
+                    Error = string.Empty,
+                    Data = regionDto
+                });
+            }
+            catch (RegionNotFoundException ex)
+            {
+                return StatusCode(400, new BaseResponseDto<RegionResponseDto>
+                {
+                    Error = ex.Message,
+                    Success = false
+                });
+            }
+            catch (Exception)
+            {
+                return StatusCode(400, new BaseResponse
+                {
+                    Error = "Ocorreu um erro!",
+                    Success = false
+                });
+            }
+
         }
 
         [HttpGet("get-all")]
@@ -124,10 +145,21 @@ namespace TechChallenge.Region.Api.Controllers.Region.Http
                     ItemsPerPage = pageSize
                 });
             }
-            catch (Exception ex)
+            catch (RegionNotFoundException ex)
             {
-
-                throw ex;
+                return StatusCode(400, new BaseResponse
+                {
+                    Error = ex.Message,
+                    Success = false
+                });
+            }
+            catch (Exception)
+            {
+                return StatusCode(400, new BaseResponse
+                {
+                    Error = "Ocorreu um erro!",
+                    Success = false
+                });
             }
 
         }
